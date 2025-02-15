@@ -10,7 +10,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section className="bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
+    <section className="bg-transparent h-screen pl-[10%] pr-[14%] mt-8 lg:mt-20">
       {/* Heading Section */}
       <div className="mb-8">
       <h4 className="text-lg font-bold border border-[#dddddd] text-[#dddddd] py-2 px-4 w-[132px] text-center hover:border-gray-200 mb-12 font-Poppins rounded-full">

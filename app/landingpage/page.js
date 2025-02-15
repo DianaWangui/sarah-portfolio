@@ -10,22 +10,23 @@ const Home = () => {
   return (
     <div className=" w-[100%] flex flex-col lg:flex-row bg-[#001f3f] mb-4">
       {/* First div on the left fixed position */}
-      <div className="bg-transparent border-r border-gray-100 flex flex-col items-center w-[100%] lg:w-[24%] h-[100%] gap-4 p-4 lg:fixed left-0">
+      <div className="bg-transparent border-r border-gray-100 flex flex-col items-center
+                      w-full md:w-1/3 lg:w-1/4 h-screen overflow-y-auto p-4 lg:fixed left-0 top-0
+                      scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200">
         <div className="text-center p-4 flex gap-2 flex-col items-center">
         <h1 className="text-4xl font-bold font-sans">Sarah Gichuru</h1>
         <p className="text-sm font-bold font-sans">Technical Ops engineer</p>
         </div>
         <div className="w-full max-w-xs">
-          <Image 
-            src="/Images/sarah.jpg" 
-            alt="profile" 
-            width={0} 
-            height={0} 
+          <Image
+            src="/Images/sarah.jpg"
+            alt="profile"
+            width={0}
+            height={0}
             sizes="100vw"
             className="w-full h-auto rounded-xl"
           />
         </div>
-
 
         <div className='flex flex-col gap-4 items-center'>
           <h2 className="text-2xl font-bold font-sans">sarah@gmail.com</h2>
@@ -57,14 +58,15 @@ const Home = () => {
         </div>
       </div>
 
+
       {/* First div on the right scrollable */}
-      <div className="bg-transparent w-[100%] lg:w-[76%] h-[100%] lg:ml-[24%]">
+      <div className="bg-trasparent w-[100%] lg:w-[76%] h-[100%] lg:ml-[24%]">
         <About />
         <Skills />
         <Experience />
         <Education />
         <Contact />
-        
+
       </div>
     </div>
   );
