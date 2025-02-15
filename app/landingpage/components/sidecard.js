@@ -10,8 +10,8 @@ const SideCard = () => {
                          p-4 lg:fixed left-0 top-0"
         >
             <div className="text-center p-4 flex gap-2 flex-col items-center">
-                <h1 className="text-4xl font-bold font-sans">Sarah Gichuru</h1>
-                <p className="text-sm font-bold font-sans">Technical Ops Engineer</p>
+                <h1 className="text-4xl text-[#9CDCFE] font-bold font-sans">Sarah Gichuru</h1>
+                <p className="text-sm text-[#CE9178] font-bold font-sans">Technical Ops Engineer</p>
             </div>
 
             <div className="w-full max-w-xs">
@@ -25,9 +25,9 @@ const SideCard = () => {
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-                <h2 className="text-2xl font-bold font-sans">sarah@gmail.com</h2>
-                <h2 className="text-2xl font-bold font-sans">Nairobi, Kenya</h2>
-                <p>&copy; {new Date().getFullYear()} Sarah Gichuru. All rights reserved.</p>
+                <h2 className="text-2xl text-[#D69862] font-bold font-sans">sarah@gmail.com</h2>
+                <h2 className="text-2xl text-[#2C7AD6] font-bold font-sans">Nairobi, Kenya</h2>
+                <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Sarah Gichuru. All rights reserved.</p>
 
                 {/* Social Media Links */}
                 <ul className="flex flex-row items-center gap-4">
