@@ -1,9 +1,67 @@
 const Experience = () => {
   return (
-    <div>
-      <h1 className="text-4xl font-bold">Experience</h1>
+    <div className="bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
+      {/* Title */}
+      <h4 className="text-lg font-bold border border-[#dddddd] text-[#dddddd] py-2 px-4 w-[132px] text-center hover:border-gray-200 mb-12 font-Poppins rounded-full">
+        Experience
+      </h4>
+
+      {/* Timeline Container */}
+      <div className="relative mt-8 border-l-2 border-gray-500 pl-6 space-y-8">
+      {/* Experience Entries */}
+      {experienceData.map((exp, index) => (
+        <div 
+          key={index} 
+          className="relative pl-8 group p-2 rounded-md transition duration-300"
+        >
+          {/* Circle Indicator */}
+          {exp.date && (
+            <div className="absolute -left-3 top-1 w-3 h-3 rounded-full bg-gray-300 group-hover:bg-green-500 transition duration-300"></div>
+          )}
+
+          {/* Date */}
+          {exp.date && <p className="text-sm text-gray-400">{exp.date}</p>}
+
+          {/* Job Title */}
+          <h3 className="text-lg lg:text-2xl font-semibold">{exp.title}</h3>
+
+          {/* Company */}
+          <p className="text-sm text-gray-400">{exp.company}</p>
+        </div>
+      ))}
+    </div>
+
     </div>
   );
 };
 
-export default Experience
+// Experience Data
+const experienceData = [
+  {
+    date: "October 2021 - Present",
+    title: "Pre-Sales Engineer",
+    company: "Dahua Technology",
+  },
+  {
+    date: "",
+    title: "Solutions Assistant Engineer",
+    company: "Dahua Technology Kenya",
+  },
+  {
+    date: "July 2021 - September 2021",
+    title: "Chief Technical Officer (CTO)",
+    company: "Imax Technologies Limited (Official Dahua Technology Distributor)",
+  },
+  {
+    date: "January 2020 - June 2021",
+    title: "Service Delivery Executive",
+    company: "OpenBusiness Africa",
+  },
+  {
+    date: "August 2019 - December 2019",
+    title: "",
+    company: "",
+  },
+];
+
+export default Experience;
