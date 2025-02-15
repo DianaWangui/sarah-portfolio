@@ -1,4 +1,6 @@
 import React from 'react';
+import DataObjectIcon from '@mui/icons-material/DataObject';
+
 
 const skillsData = [
   { name: 'SIP & VoIP', level: 85 },
@@ -10,12 +12,16 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section className="bg-transparent h-screen pl-[10%] pr-[14%] mt-8 lg:mt-20">
+    <section className="bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       {/* Heading Section */}
       <div className="mb-8">
-      <h4 className="text-lg font-bold border border-[#dddddd] text-[#dddddd] py-2 px-4 w-[132px] text-center hover:border-gray-200 mb-12 font-Poppins rounded-full">
-        Proffesional
-      </h4>
+        <h4 className="text-sm font-light lg:border border-gray-[700]
+                     text-[#dddddd] py-2 px-4  mb-12 w-[20%] text-nowrap
+                     flex items-center gap-2 decoration-inherit
+                    hover:border-gray-200 font-Poppins rounded-full">
+          <DataObjectIcon className="text-[#D70654]" />
+          MY CRAFT
+        </h4>
         <p className="text-gray-100 text-sm md:text-base">My Knowledge Level</p>
       </div>
 
