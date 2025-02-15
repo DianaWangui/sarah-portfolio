@@ -1,5 +1,29 @@
 const Experience = () => {
+  // Experience dummy data
+  const experienceData = [
+    {
+      date: "July 2021 - Present",
+      title: "Technical Operations Engineer",
+      company: "Swift Technologies",
+    },
+    {
+      date: "August 2023 - Contract",
+      title: "Technical Support Engineer",
+      company: "Swift Technologies",
+    },
+    {
+      date: "August 2023 - Contract",
+      title: "Technical Support",
+      company: "Africa Climate Summit Event 2023, KICC",
+    },
+    {
+      date: "May - Oct 2019",
+      title: "WEB Designer-Intern",
+      company: "Kiambu Institute of Science and Technology",
+    },
+  ];
   return (
+    
     <div className="bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       {/* Title */}
       <h4 className="text-lg font-bold border border-[#dddddd] text-[#dddddd] py-2 px-4 w-[132px] text-center hover:border-gray-200 mb-12 font-Poppins rounded-full">
@@ -34,34 +58,5 @@ const Experience = () => {
     </div>
   );
 };
-
-// Experience Data
-const experienceData = [
-  {
-    date: "October 2021 - Present",
-    title: "Pre-Sales Engineer",
-    company: "Dahua Technology",
-  },
-  {
-    date: "",
-    title: "Solutions Assistant Engineer",
-    company: "Dahua Technology Kenya",
-  },
-  {
-    date: "July 2021 - September 2021",
-    title: "Chief Technical Officer (CTO)",
-    company: "Imax Technologies Limited (Official Dahua Technology Distributor)",
-  },
-  {
-    date: "January 2020 - June 2021",
-    title: "Service Delivery Executive",
-    company: "OpenBusiness Africa",
-  },
-  {
-    date: "August 2019 - December 2019",
-    title: "",
-    company: "",
-  },
-];
 
 export default Experience;

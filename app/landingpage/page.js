@@ -4,9 +4,11 @@ import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 import About from './components/about';
 import Skills from './components/skills';
 import Experience from './components/experience';
+import Education from './components/education';
+import Contact from './components/contact';
 const Home = () => {
   return (
-    <div className=" w-[100%] flex flex-col lg:flex-row bg-[#001f3f]">
+    <div className=" w-[100%] flex flex-col lg:flex-row bg-[#001f3f] mb-4">
       {/* First div on the left fixed position */}
       <div className="bg-transparent border-r border-gray-100 flex flex-col items-center w-[100%] lg:w-[24%] h-[100%] gap-4 p-4 lg:fixed left-0">
         <div className="text-center p-4 flex gap-2 flex-col items-center">
@@ -60,6 +62,8 @@ const Home = () => {
         <About />
         <Skills />
         <Experience />
+        <Education />
+        <Contact />
         
       </div>
     </div>
