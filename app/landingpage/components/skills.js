@@ -3,15 +3,25 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import DataObjectIcon from "@mui/icons-material/DataObject";
 import "react-circular-progressbar/dist/styles.css";
+import LinuxIcon from "@mui/icons-material/Terminal";
+import ZabbixIcon from "@mui/icons-material/Storage";
+import GrafanaIcon from "@mui/icons-material/BarChart";
+import WiresharkIcon from "@mui/icons-material/NetworkCheck";
+import MikroTikIcon from "@mui/icons-material/Router";
+import PrometheusIcon from "@mui/icons-material/Speed";
+import KVMIcon from "@mui/icons-material/Cloud";
+import SngrepIcon from "@mui/icons-material/Visibility";
 
 const skillsData = [
-  { name: "SIP & VoIP", percentage: 85 },
-  { name: "Systems (Yeastar, Yealink, Fanvil)", percentage: 90 },
-  { name: "FTTH Solutions & Fiber Planning", percentage: 98 },
-  { name: "Virtualization (KVM, ESXi)", percentage: 95 },
-  { name: "Vulnerability Analysis & Network Monitoring", percentage: 96 },
+  { name: "Linux", percentage: 99, icon: <LinuxIcon className="text-[#FFA500] text-5xl" /> },
+  { name: "Zabbix", percentage: 80, icon: <ZabbixIcon className="text-[#DC143C] text-5xl" /> },
+  { name: "Grafana", percentage: 80, icon: <GrafanaIcon className="text-[#F39C12] text-5xl" /> },
+  { name: "Wireshark", percentage: 80, icon: <WiresharkIcon className="text-[#1E90FF] text-5xl" /> },
+  { name: "MikroTik OS Router", percentage: 85, icon: <MikroTikIcon className="text-[#4CAF50] text-5xl" /> },
+  { name: "Prometheus", percentage: 75, icon: <PrometheusIcon className="text-[#FF4500] text-5xl" /> },
+  { name: "KVM / Proxmox", percentage: 90, icon: <KVMIcon className="text-[#8A2BE2] text-5xl" /> },
+  { name: "sngrep", percentage: 80, icon: <SngrepIcon className="text-[#FF69B4] text-5xl" /> },
 ];
 
 const Skills = () => {
@@ -21,11 +31,9 @@ const Skills = () => {
                      text-[#dddddd] py-2 px-4 mb-12 w-[20%] text-nowrap
                      flex items-center gap-2 decoration-inherit
                      hover:border-gray-200 font-Poppins rounded-full">
-        <DataObjectIcon className="text-[#D70654]" />
-        MY CRAFT
+        TOOLS & PROFICIENCY
       </h4>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
         {skillsData.map((skill, index) => (
           <SkillProgress key={index} skill={skill} index={index} />
         ))}
@@ -58,34 +66,24 @@ const SkillProgress = ({ skill, index }) => {
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col relative"
+      className="flex flex-col items-center relative"
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
     >
-      <div className="w-24 h-24 relative group">
+      <div className="relative w-32 h-32 flex items-center justify-center">
         <CircularProgressbar
           value={progress}
-          text={`${progress}%`}
           styles={buildStyles({
             textColor: "#fff",
-            pathColor: "#FFEFC8",
+            pathColor: "#4CAF50",
             trailColor: "#374151",
-            textSize: "16px",
+            textSize: "0px", // Hide default text
           })}
         />
-
-        {/* Chat Bubble Tooltip (Right Side) */}
-        <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2
-                        opacity-0 group-hover:opacity-100 transition-all
-                        duration-300 bg-gray-800 text-white text-sm
-                        p-3 rounded-lg shadow-lg whitespace-normal
-                        w-[180px] max-w-xs z-50
-                        before:content-[''] before:absolute
-                        before:top-1/2 before:-translate-y-1/2 before:-left-2
-                        before:border-8 before:border-transparent
-                        before:border-r-gray-800">
-          {skill.name}
+        <div className="absolute flex flex-col items-center">
+          {skill.icon}
+          <p className="text-white text-lg font-bold mt-1">{progress}%</p>
         </div>
       </div>
       <p className="text-sm mt-2 text-gray-300">{skill.name}</p>

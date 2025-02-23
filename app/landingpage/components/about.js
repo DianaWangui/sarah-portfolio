@@ -4,7 +4,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 const About = () => {
   return (
-    <div className="bg-trasparent lg:h-screen lg:pl-[10%] lg:pr-[14%] p-8">
+    <div className="bg-transparent lg:pl-[10%] lg:pr-[14%] p-8">
       <h4 className="text-sm font-light lg:border border-gray-[500]
                      text-[#dddddd] py-2 px-4 lg:mb-12 w-[120px] text-center
                      flex justify-center items-center gap-2 decoration-inherit

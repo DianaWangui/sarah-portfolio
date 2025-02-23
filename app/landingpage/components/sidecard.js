@@ -7,7 +7,7 @@ const SideCard = () => {
         // First div on the left with a fixed position
         <div className="bg-transparent border-r border-gray-100 flex flex-col items-center
                         w-full md:w-1/3 lg:w-1/4 h-screen overflow-y-scroll scrollbar-hide
-                         p-4 lg:fixed left-0 top-0"
+                         p-4 lg:fixed left-0 top-0 "
         >
             <div className="text-center p-4 flex gap-2 flex-col items-center">
                 <h1 className="text-4xl text-[#9CDCFE] font-bold font-sans">Sarah Gichuru</h1>
@@ -16,7 +16,7 @@ const SideCard = () => {
 
             <div className="w-full max-w-xs">
                 <Image
-                    src="/Images/sarah.jpg"
+                    src="/Images/sara.jpg"
                     alt="profile"
                     width={200} // Set appropriate width
                     height={200} // Set appropriate height
