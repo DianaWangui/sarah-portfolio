@@ -24,7 +24,7 @@ const skillsData = [
   { name: "sngrep", percentage: 80, icon: <SngrepIcon className="text-[#FF69B4] text-5xl" /> },
 ];
 
-const Skills = () => {
+const Tools = () => {
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <h4 className="text-sm font-light lg:border border-gray-[700]
@@ -91,4 +91,4 @@ const SkillProgress = ({ skill, index }) => {
   );
 };
 
-export default Skills;
+export default Tools;

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import About from './components/about';
-import Skills from './components/skills';
+import Tools from './components/tools';
 import Experience from './components/experience';
 import Education from './components/education';
 import Contact from './components/contact';
@@ -37,7 +37,7 @@ const Home = () => {
         <SideCard />
         <div className="w-full lg:w-[76%] lg:ml-[24%]">
           <About />
-          <Skills />
+          <Tools />
           <Specializations />
           <Experience />
           <Education />
