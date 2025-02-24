@@ -9,6 +9,7 @@ import Education from './components/education';
 import Contact from './components/contact';
 import SideCard from './components/sidecard';
 import Specializations from './components/specialization';
+import Projects from './components/projects'
 
 const AnimatedBackground = () => {
   return (
@@ -39,6 +40,7 @@ const Home = () => {
           <About />
           <Tools />
           <Specializations />
+          <Projects />
           <Experience />
           <Education />
           <Contact />
