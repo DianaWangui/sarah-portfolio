@@ -28,8 +28,8 @@ const Tools = () => {
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <h4 className="text-sm font-light lg:border border-gray-[700]
-                     text-[#dddddd] py-2 px-4 mb-12 w-[20%] text-nowrap
-                     flex items-center gap-2 decoration-inherit
+                     text-[#dddddd] py-2 px-12 mb-12 w-[32%] text-nowrap
+                     flex items-center decoration-inherit justify-center
                      hover:border-gray-200 font-Poppins rounded-full">
         TOOLS & PROFICIENCY
       </h4>

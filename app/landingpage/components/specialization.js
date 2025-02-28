@@ -33,11 +33,11 @@ const SpecializationCard = ({ spec, index }) => {
       ref={ref}
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={controls}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
       className="group relative"
     >
-      <div className="relative border border-gray-700 p-6 rounded-xl 
-                     bg-gray-800/50 backdrop-blur-sm shadow-lg 
+      <div className="relative border border-gray-700 p-6 rounded-xl
+                     bg-gray-800/50 backdrop-blur-sm shadow-lg
                      hover:border-gray-500 transition-all duration-500
                      hover:bg-gray-800/80">
         <div className="flex items-start gap-4">
@@ -55,7 +55,7 @@ const SpecializationCard = ({ spec, index }) => {
                 style={{ color: spec.color }}>
               {spec.title}
             </h3>
-            <p className="text-sm text-gray-400 mt-2 leading-relaxed 
+            <p className="text-sm text-gray-400 mt-2 leading-relaxed
                          group-hover:text-gray-300 transition-colors duration-300">
               {spec.description}
             </p>
@@ -78,10 +78,10 @@ const Specializations = () => {
 
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
-      <motion.h4 
+      <motion.h4
         className="text-sm font-light lg:border border-gray-[700]
-                   text-[#dddddd] py-2 px-4 mb-12 w-[20%] text-nowrap
-                   flex items-center gap-2 decoration-inherit
+                   text-[#dddddd] py-2 px-4 mb-12 w-[24%] text-nowrap
+                   flex items-center justify-center gap-2 decoration-inherit
                    hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}

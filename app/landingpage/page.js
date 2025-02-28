@@ -10,17 +10,18 @@ import Contact from './components/contact';
 import SideCard from './components/sidecard';
 import Specializations from './components/specialization';
 import Projects from './components/projects'
-import Achievements from './components/achievements'; 
+import Achievements from './components/achievements';
+import InfiniteScrollAnimation from './components/tools2';
 
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10">
       {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#001f3f] via-[#002847] to-[#001f3f] animate-gradient-slow" />
-      
+
       {/* Overlay with animated opacity */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#001f3f]/80 to-transparent" />
-      
+
       {/* Animated dots overlay */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:20px_20px] animate-stars" />
@@ -42,6 +43,7 @@ const Home = () => {
           <Achievements />
           <Specializations />
           <Tools />
+          <InfiniteScrollAnimation />
           <Projects />
           <Experience />
           <Education />

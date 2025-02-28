@@ -7,7 +7,7 @@ import { Server, Cloud, Phone, Shield } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
-    { 
+    {
       title: 'Cloud PBX & VMS',
       description: 'Deployed and sold P-Series Cloud PBX instances across multiple regions. With 176 extensions sold and 15PBXs sold',
       icon: Phone,
@@ -35,27 +35,40 @@ const Projects = () => {
 
   const ProjectCard = ({ project, index }) => {
     const controls = useAnimation();
-    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
+    const [ref, inView] = useInView({
+      triggerOnce: false,
+      threshold: 0.2,
+      rootMargin: "-50px 0px" // Makes animation trigger slightly earlier
+    });
     const Icon = project.icon;
 
     useEffect(() => {
       if (inView) {
-        controls.start({ opacity: 1, y: 0, scale: 1 });
+        controls.start({
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.5, delay: index * 0.2 }
+        });
       } else {
-        controls.start({ opacity: 0, y: 50, scale: 0.9 });
+        controls.start({
+          opacity: 0,
+          y: 20, // Reduced from 50 to make it less dramatic
+          scale: 0.95, // Less dramatic scale change (was 0.9)
+          transition: { duration: 0.3 } // Faster fade out
+        });
       }
-    }, [controls, inView]);
+    }, [controls, inView, index]);
 
     return (
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        initial={{ opacity: 0, y: 20, scale: 0.95 }} // Less dramatic initial state
         animate={controls}
-        transition={{ duration: 0.8, delay: index * 0.2 }}
         className="group relative w-full"
       >
-        <div className="relative border border-gray-700 p-6 rounded-xl 
-                       bg-gray-800/50 backdrop-blur-sm shadow-lg 
+        <div className="relative border border-gray-700 p-6 rounded-xl
+                       bg-gray-800/50 backdrop-blur-sm shadow-lg
                        hover:border-gray-500 transition-all duration-500
                        hover:bg-gray-800/80">
           <div className="flex items-start gap-4">
@@ -70,10 +83,10 @@ const Projects = () => {
 
             <div className="flex-1">
               <h3 className="text-lg font-semibold"
-                  style={{ color: project.color }}>
+                style={{ color: project.color }}>
                 {project.title}
               </h3>
-              <p className="text-sm text-gray-400 mt-2 leading-relaxed 
+              <p className="text-sm text-gray-400 mt-2 leading-relaxed
                            group-hover:text-gray-300 transition-colors duration-300">
                 {project.description}
               </p>
@@ -84,7 +97,7 @@ const Projects = () => {
             className="absolute inset-0 border border-transparent rounded-xl"
             initial={false}
             animate={inView ? { borderColor: `${project.color}20` } : { borderColor: 'transparent' }}
-            transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
+            transition={{ duration: 1, delay: index * 0.2 + 0.3 }}
           />
         </div>
       </motion.div>
@@ -95,10 +108,10 @@ const Projects = () => {
 
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
-      <motion.h4 
+      <motion.h4
         className="text-sm font-light lg:border border-gray-[700]
                    text-[#dddddd] py-2 px-4 mb-12 w-[20%] text-nowrap
-                   flex items-center gap-2 decoration-inherit
+                   flex items-center justify-center gap-2 decoration-inherit
                    hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -108,7 +121,7 @@ const Projects = () => {
         PROJECTS
       </motion.h4>
 
-      <div className="flex flex-col gap-8">
+      <div className="grid grid-cols-1 gap-6"> {/* Reduced gap from 8 to 6 */}
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
