@@ -10,6 +10,7 @@ import Contact from './components/contact';
 import SideCard from './components/sidecard';
 import Specializations from './components/specialization';
 import Projects from './components/projects'
+import Achievements from './components/achievements'; 
 
 const AnimatedBackground = () => {
   return (
@@ -38,8 +39,9 @@ const Home = () => {
         <SideCard />
         <div className="w-full lg:w-[76%] lg:ml-[24%]">
           <About />
-          <Tools />
+          <Achievements />
           <Specializations />
+          <Tools />
           <Projects />
           <Experience />
           <Education />
