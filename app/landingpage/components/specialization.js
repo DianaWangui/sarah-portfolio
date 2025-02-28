@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Monitor, Radio, Terminal, Cloud, Share2, Server, Shield } from 'lucide-react';
+import { Monitor, Radio, Terminal, Cloud, Share2, Server, Shield, Award } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -79,16 +79,14 @@ const Specializations = () => {
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
-        className="text-sm font-light lg:border border-gray-[700]
-                   text-[#dddddd] py-2 px-4 mb-12 w-[24%] text-nowrap
-                   flex items-center justify-center gap-2 decoration-inherit
-                   hover:border-gray-200 font-Poppins rounded-full"
+        className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-all duration-300"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
         ref={ref}
+        whileHover={{ scale: 1.03 }}
       >
-        SPECIALIZATIONS
+        <Award className="h-5 w-5" /> SPECIALIZATIONS
       </motion.h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

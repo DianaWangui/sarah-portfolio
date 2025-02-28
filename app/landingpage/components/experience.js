@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react"; // Importing the Briefcase icon
 
 const Experience = () => {
   // Experience dummy data
@@ -42,14 +43,15 @@ const Experience = () => {
 
   return (
     <div className="bg-transparent px-6 md:px-10 lg:px-[10%] mt-8 lg:mt-20">
-      {/* Title */}
+      {/* Title with icon */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
+        whileHover={{ scale: 1.03 }}
       >
-        <h4 className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-block mb-12 font-Poppins rounded-full shadow-md">
-          Experience
+        <h4 className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+          <Briefcase className="h-5 w-5" /> Experience
         </h4>
       </motion.div>
 

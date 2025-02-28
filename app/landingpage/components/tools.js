@@ -12,6 +12,7 @@ import MikroTikIcon from "@mui/icons-material/Router";
 import PrometheusIcon from "@mui/icons-material/Speed";
 import KVMIcon from "@mui/icons-material/Cloud";
 import SngrepIcon from "@mui/icons-material/Visibility";
+import ToolsIcon from "@mui/icons-material/HandymanOutlined"; // Added Tools icon
 
 const skillsData = [
   { name: "Linux", percentage: 99, icon: <LinuxIcon className="text-[#FFA500] text-5xl" /> },
@@ -25,14 +26,21 @@ const skillsData = [
 ];
 
 const Tools = () => {
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
-      <h4 className="text-sm font-light lg:border border-gray-[700]
-                     text-[#dddddd] py-2 px-12 mb-12 w-[32%] text-nowrap
-                     flex items-center decoration-inherit justify-center
-                     hover:border-gray-200 font-Poppins rounded-full">
-        TOOLS & PROFICIENCY
-      </h4>
+      <motion.h4
+        className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+        initial={{ opacity: 0, y: -20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}
+        ref={ref}
+        whileHover={{ scale: 1.03 }}
+      >
+        <ToolsIcon className="h-5 w-5" /> TOOLS & PROFICIENCY
+      </motion.h4>
+      
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
         {skillsData.map((skill, index) => (
           <SkillProgress key={index} skill={skill} index={index} />
