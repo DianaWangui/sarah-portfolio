@@ -9,8 +9,8 @@ const Achievements = () => {
   ];
 
   return (
-    <div className="bg-transparent md:p-6 lg:p-8 mt-4 md:mt-6 lg:mt-20 lg:pl-[20%] lg:pr-[14%] flex gap-24">
-      <div className="w-full lg:grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 px-12">
+    <div className="bg-transparent px-4 py-6 mt-4 md:mt-6 lg:mt-20 lg:px-8 lg:py-10">
+      <div className="w-full flex flex-wrap justify-center max-w-6xl mx-auto">
         {achievements.map((achievement, index) => {
           const key = Object.keys(achievement)[0];
           const value = Object.values(achievement)[0];
@@ -18,27 +18,29 @@ const Achievements = () => {
           return (
             <motion.div
               key={index}
-              className="flex flex-col items-center sm:items-start"
+              className="flex flex-col items-center w-1/2 sm:w-1/2 lg:w-1/4 p-3 md:p-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
-              <motion.h1
-                className="text-white text-4xl sm:text-5xl lg:text-6xl p-2"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                {key}
-              </motion.h1>
-              <motion.p
-                className="p-2 text-gray-400 text-sm sm:text-base text-center sm:text-left"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-                {value}
-              </motion.p>
+              <div className="bg-opacity-10 bg-white rounded-lg p-4 w-full flex flex-col items-center lg:items-start">
+                <motion.h1
+                  className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {key}
+                </motion.h1>
+                <motion.p
+                  className="mt-2 text-gray-400 text-xs sm:text-sm lg:text-base text-center lg:text-left"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  {value}
+                </motion.p>
+              </div>
             </motion.div>
           );
         })}

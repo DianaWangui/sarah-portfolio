@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Experience = () => {
   // Experience dummy data
   const experienceData = [
@@ -22,39 +24,74 @@ const Experience = () => {
       company: "Kiambu Institute of Science and Technology",
     },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
-    
-    <div className="bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
+    <div className="bg-transparent px-6 md:px-10 lg:px-[10%] mt-8 lg:mt-20">
       {/* Title */}
-      <h4 className="text-lg font-bold border border-[#dddddd] text-[#dddddd] py-2 px-4 w-[132px] text-center hover:border-gray-200 mb-12 font-Poppins rounded-full">
-        Experience
-      </h4>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h4 className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-block mb-12 font-Poppins rounded-full shadow-md">
+          Experience
+        </h4>
+      </motion.div>
 
       {/* Timeline Container */}
-      <div className="relative mt-8 border-l-2 border-gray-500 pl-6 space-y-8">
-      {/* Experience Entries */}
-      {experienceData.map((exp, index) => (
-        <div 
-          key={index} 
-          className="relative pl-8 group p-2 rounded-md transition duration-300"
-        >
-          {/* Circle Indicator */}
-          {exp.date && (
-            <div className="absolute -left-3 top-1 w-3 h-3 rounded-full bg-gray-300 group-hover:bg-green-500 transition duration-300"></div>
-          )}
+      <motion.div 
+        className="relative mt-8 ml-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Timeline line */}
+        <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-gray-500 via-gray-400 to-gray-300"></div>
 
-          {/* Date */}
-          {exp.date && <p className="text-sm text-gray-400">{exp.date}</p>}
+        {/* Experience Entries */}
+        {experienceData.map((exp, index) => (
+          <motion.div
+            key={index}
+            className="relative mb-12 last:mb-0 group"
+            variants={itemVariants}
+          >
+            {/* Circle Indicator - Changes to green on hover */}
+            <div className="absolute -left-2.5 w-5 h-5 rounded-full border-2 border-gray-600 bg-gray-800 shadow-lg z-10 transform transition-all duration-300 
+                          group-hover:border-green-500 group-hover:bg-green-500 group-hover:scale-110"></div>
 
-          {/* Job Title */}
-          <h3 className="text-lg lg:text-2xl font-semibold">{exp.title}</h3>
+            {/* Content Card - Border changes to green on hover */}
+            <div className="ml-8 p-5 bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg border border-gray-700 shadow-xl 
+                          transition-all duration-300 group-hover:border-green-500 group-hover:translate-x-1">
+              {/* Date */}
+              <div className="inline-block px-3 py-1 mb-2 bg-gray-700 bg-opacity-70 rounded-full text-xs text-gray-300 font-medium
+                            group-hover:bg-green-900 group-hover:text-green-100 transition-all duration-300">
+                {exp.date}
+              </div>
 
-          {/* Company */}
-          <p className="text-sm text-gray-400">{exp.company}</p>
-        </div>
-      ))}
-    </div>
+              {/* Job Title */}
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors duration-300">{exp.title}</h3>
 
+              {/* Company */}
+              <p className="text-gray-400 font-medium">{exp.company}</p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };
