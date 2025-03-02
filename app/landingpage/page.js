@@ -16,21 +16,18 @@ import InfiniteScrollAnimation from './components/tools2';
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10">
-      {/* Base gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001f3f] via-[#002847] to-[#001f3f] animate-gradient-slow" />
+      {/* Background image from public folder */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center" 
+        style={{ backgroundImage: "url('/Images/bg.jpg)" }} 
+      />
 
-      {/* Overlay with animated opacity */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#001f3f]/80 to-transparent" />
-
-      {/* Animated dots overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:20px_20px] animate-stars" />
-        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:30px_30px] [animation-delay:0.2s] animate-stars" />
-        <div className="absolute inset-0 bg-[radial-gradient(white_2px,transparent_2px)] bg-[length:40px_40px] [animation-delay:0.4s] animate-stars" />
-      </div>
+      {/* Optional overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/40" />
     </div>
   );
 };
+
 
 const Home = () => {
   return (
