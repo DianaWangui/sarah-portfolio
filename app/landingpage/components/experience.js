@@ -50,13 +50,15 @@ const Experience = () => {
         transition={{ duration: 0.6 }}
         whileHover={{ scale: 1.03 }}
       >
-        <h4 className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-          <Briefcase className="h-5 w-5" /> Experience
+        <h4 className="text-sm font-light lg:border border-gray-[500]
+                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
+                     flex justify-center items-center gap-2
+                    hover:border-gray-200 font-Poppins rounded-full"><Briefcase className="h-5 w-5" /> Experience
         </h4>
       </motion.div>
 
       {/* Timeline Container */}
-      <motion.div 
+      <motion.div
         className="relative mt-8 ml-4"
         variants={containerVariants}
         initial="hidden"
@@ -73,11 +75,11 @@ const Experience = () => {
             variants={itemVariants}
           >
             {/* Circle Indicator - Changes to green on hover */}
-            <div className="absolute -left-2.5 w-5 h-5 rounded-full border-2 border-gray-600 bg-gray-800 shadow-lg z-10 transform transition-all duration-300 
+            <div className="absolute -left-2.5 w-5 h-5 rounded-full border-2 border-gray-600 bg-gray-800 shadow-lg z-10 transform transition-all duration-300
                           group-hover:border-green-500 group-hover:bg-green-500 group-hover:scale-110"></div>
 
             {/* Content Card - Border changes to green on hover */}
-            <div className="ml-8 p-5 bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg border border-gray-700 shadow-xl 
+            <div className="ml-8 p-5 bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg border border-gray-700 shadow-xl
                           transition-all duration-300 group-hover:border-green-500 group-hover:translate-x-1">
               {/* Date */}
               <div className="inline-block px-3 py-1 mb-2 bg-gray-700 bg-opacity-70 rounded-full text-xs text-gray-300 font-medium

@@ -17,7 +17,7 @@ const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10">
       {/* Base gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001f3f] via-[#002847] to-[#001f3f] animate-gradient-slow" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#181818] to-[#383838] animate-gradient-slow" />
 
       {/* Overlay with animated opacity */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#001f3f]/80 to-transparent" />
@@ -34,7 +34,7 @@ const AnimatedBackground = () => {
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-black bg-[url(/Images/bg-camera.jpg)] bg-fixed ... bg-opacity-75 bg-blend-multiply bg-cover bg-center bg-no-repeat">
       <AnimatedBackground />
       <div className="relative w-full flex flex-col lg:flex-row">
         <SideCard />

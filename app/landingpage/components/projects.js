@@ -109,7 +109,10 @@ const Projects = () => {
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
-        className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
+        className="text-sm font-light lg:border border-gray-[500]
+                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
+                     flex justify-center items-center gap-2
+                    hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}

@@ -31,7 +31,10 @@ const Tools = () => {
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
-        className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 px-6 inline-flex items-center gap-2 mb-12 font-Poppins rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+              className="text-sm font-light lg:border border-gray-[500]
+                           text-[#dddddd] py-2 px-4 lg:mb-12 w-[40%] text-center
+                           flex justify-center items-center gap-2
+                          hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
@@ -40,7 +43,7 @@ const Tools = () => {
       >
         <ToolsIcon className="h-5 w-5" /> TOOLS & PROFICIENCY
       </motion.h4>
-      
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
         {skillsData.map((skill, index) => (
           <SkillProgress key={index} skill={skill} index={index} />
