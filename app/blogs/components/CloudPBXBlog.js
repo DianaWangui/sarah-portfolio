@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Server, Shield, Globe, Database } from 'lucide-react';
+import Image from 'next/image';
 
 const CloudPBXBlog = () => {
     return (
@@ -27,6 +28,10 @@ const CloudPBXBlog = () => {
                     <p className="text-sm text-gray-500 italic mb-6">
                         Note: This solution requires higher server specifications for multi-instance architecture, SBC, etc.
                     </p>
+                    <Image src="/Images/cloud.png" alt="Cloud Image" layout="responsive"
+                        width={16}
+                        height={9}
+                    />
                 </div>
 
                 <h2 className="text-xl font-bold mb-4 text-white">Supported VM platforms</h2>

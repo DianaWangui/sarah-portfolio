@@ -11,17 +11,19 @@ const BlogPage = () => {
   const blogs = [
     {
       id: 'cloud-pbx',
-      img: '/Images/image.png',
+      img: '/Images/cloud.png',
       title: 'Cloud PBX BYOI Deployment Solution',
-      excerpt: 'Empower your business with a fully customizable, self-hosted P Series Cloud PBX solution.',
+      excerpt: 'Empower your business with a fully customizable, self-hosted P Series Cloud PBX solution. Built from scratch with virtualization, advanced clustering, and seamless networking, our P-Series Cloud PBX has already transformed communication for 180+ extensions since its launch in January 2024.',
       date: 'February 28, 2025',
+      learn: 'To learn more on deployment',
       tag: 'Infrastructure',
       component: <CloudPBXBlog />
     },
     {
       id: 'network-monitoring',
+      img: '/Images/image.png',
       title: 'Network Monitoring with Zabbix, Prometheus, and Grafana',
-      excerpt: 'A comprehensive guide for real-time network monitoring using open-source tools.',
+      excerpt: 'Effective network monitoring is crucial for maintaining optimal performance and security. In this guide, I will walk you through my project of deploying and configuring Zabbix, Prometheus, and Grafana for real-time network monitoring. By the end of this guide, you will have a robust setup capable of monitoring network traffic, performance, and security events.',
       date: 'February 20, 2025',
       tag: 'Networking',
       component: <NetworkMonitoringBlog />
@@ -67,15 +69,15 @@ const BlogPage = () => {
                       </span>
                       <span className="text-sm text-gray-500">{blog.date}</span>
                     </div>
-                    <img src={blog.img} alt={blog.title} className="w-full h-full object-cover mb-4" />
+                    <img src={blog.img} alt={blog.title} className="w-full h-[50%] object-cover mb-4" />
                     <h3 className="text-xl font-bold mb-2 text-white">{blog.title}</h3>
-                    <p className="text-gray-400 mb-4">{blog.excerpt}</p>
+                    <p className="text-gray-400 mb-4 text-sm">{blog.excerpt}</p>
                     <button
                       onClick={() => setSelectedBlog(blog.id)}
                       className="flex items-center text-green-500 hover:text-green-400 transition-colors duration-300"
                     >
                       <BookOpen size={16} className="mr-1" />
-                      Read full article
+                      {blog.learn} - Read More
                     </button>
                   </div>
                 </div>
