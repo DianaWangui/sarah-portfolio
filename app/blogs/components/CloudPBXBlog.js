@@ -44,7 +44,7 @@ const CloudPBXBlog = () => {
                     <li>VMware</li>
                 </ul>
 
-                <h2 className="text-xl font-bold mb-4 text-white">Foundational Architecture</h2>
+                <h2 className="text-xl font-bold mb-4 text-white">The foundational architecture of Yeastar P-Series Cloud PBX includes the following components:</h2>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-gray-900 p-4 rounded-lg border border-gray-800">
