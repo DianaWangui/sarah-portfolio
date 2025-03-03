@@ -13,8 +13,8 @@ const Projects = () => {
     {
       id: 'cloud-pbx',
       img: '/Images/cloud.png',
-      title: 'Cloud PBX BYOI Deployment Solution',
-      excerpt: 'Empower your business with a fully customizable, self-hosted P Series Cloud PBX solution. Built from scratch with virtualization, advanced clustering, and seamless networking, our P-Series Cloud PBX has already transformed communication for 180+ extensions since its launch in January 2024.',
+      title: 'How to Deploy P Series Cloud PBX BYOI Solution in DC',
+      excerpt: 'Empower your business with a fully customizable, self-hosted P Series Cloud PBX solution. Built from scratch with virtualization, advanced clustering, and seamless networking, our P-Series Cloud PBX has already transformed communication for 180+ extensions since its launch in January 2024. Take control of your infrastructure and scale effortlessly with our BYOI (Bring Your Own Infrastructure) approach.',
       date: 'February 28, 2025',
       learn: 'To learn more on deployment',
       tag: 'Infrastructure',
@@ -23,7 +23,7 @@ const Projects = () => {
     {
       id: 'network-monitoring',
       img: '/Images/image.png',
-      title: 'Network Monitoring with Zabbix, Prometheus, and Grafana',
+      title: 'Network Monitoring with Zabbix, Prometheus, and Grafana: A Comprehensive Guide',
       excerpt: 'Effective network monitoring is crucial for maintaining optimal performance and security. In this guide, I will walk you through my project of deploying and configuring Zabbix, Prometheus, and Grafana for real-time network monitoring. By the end of this guide, you will have a robust setup capable of monitoring network traffic, performance, and security events.',
       date: 'February 20, 2025',
       tag: 'Networking',
