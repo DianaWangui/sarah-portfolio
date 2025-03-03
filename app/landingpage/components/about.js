@@ -12,13 +12,25 @@ const About = () => {
         <PersonOutlineIcon className="text-green-500" />
         ABOUT
       </h4>
-      <h1 className="text-4xl lg:text-6xl font-bold lg:font-light text-gray-100 mt-4 lg:tracking-wider leading-relaxed">
-        Security Analyst,<br />Project Manager &<br />Technical Ops Engineer
-      </h1>
+        <h1 className="text-4xl lg:text-6xl font-bold lg:font-light text-gray-100 mt-4 lg:tracking-wider leading-relaxed">
+        Cloud & Network Infrastructure Architect |<br />VoIP, Virtualization &<br /> Cybersecurity Specialist 
+        </h1>
 
-      <p className="text-gray-500 mt-4 mb-4 text-lg lg:pr-[8%] leading-[12rem">
-        Technical Operations Engineer and Project Manager with over <span className="text-[#FFEFC8]">4+ years </span>of experience in managing large-scale IT infrastructures, delivering exceptional technical support, and leading cross-functional projects to success. Expert in Cloud PBX and Video Management Systems (VMS), with a proven track record of designing and implementing robust IT systems to ensure high availability and optimal performance. Adept at troubleshooting complex technical issues, enhancing system security, and ensuring compliance with IT standards. Strong communicator and team leader, capable of driving efficiency improvements and managing teams to meet tight deadlines.
-      </p>
+        <p className="text-gray-500 mt-4 mb-4 text-lg lg:pr-[8%] leading-[12rem">
+          I am a <span className="text-[#FFEFC8]">Cloud & Network Solutions Architect</span> specializing in <span className="text-[#FFEFC8]">VoIP, Cybersecurity, and IT Infrastructure</span>. With years of experience designing, deploying, and managing secure, scalable solutions, I help businesses optimize their technology for maximum efficiency.
+          <br/><br/>
+          <strong>What I Do Best:</strong>
+          <br/>
+          • Design and deploy <strong>scalable VoIP solutions</strong> (Yeastar PBX, SIP troubleshooting, CRM integrations).
+          <br/>
+          • Secure enterprise networks with <strong>advanced VPNs (IPsec, WireGuard), VLANs, and monitoring tools</strong> (Zabbix, Grafana, Prometheus).
+          <br/>
+          • Manage <strong>cloud and virtualization platforms</strong> (KVM, Proxmox, ESXi, Linux servers) and implement <strong>colocation solutions</strong>.
+          <br/>
+          • Build and optimize <strong>IT infrastructure</strong>, including fiber networks (FTTX), structured cabling, CCTV, and biometric security.
+          <br/><br/>
+          I am passionate about <strong>optimizing IT infrastructure, improving cybersecurity, and delivering seamless communication solutions</strong> that enhance business efficiency. Let's connect and explore how technology can drive success!
+        </p>
       <Link
         href="/blogs"
         className="text-gray-50 text-lg font-poppins flex items-center gap-2 underline decoration-inherit hover:text-green-500"

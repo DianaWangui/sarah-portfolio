@@ -25,29 +25,29 @@ const SideCard = () => {
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-                <h2 className="text-2xl text-[#D69862] font-bold font-sans">sarah@gmail.com</h2>
+                <h2 className="text-2xl text-[#D69862] font-bold font-sans">sarahgichuru55@gmail.com</h2>
                 <h2 className="text-2xl text-[#2C7AD6] font-bold font-sans">Nairobi, Kenya</h2>
                 <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Sarah Gichuru. All rights reserved.</p>
 
                 {/* Social Media Links */}
                 <ul className="flex flex-row items-center gap-4">
                     <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
-                        <Link href="https://www.linkedin.com" target="_blank">
+                        <Link href="https://www.linkedin.com/in/s-gichuru/" target="_blank">
                             <FaLinkedin className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
                     <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
-                        <Link href="https://www.twitter.com" target="_blank">
+                        <Link href="https://x.com/SarahGichuru" target="_blank">
                             <FaTwitter className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
                     <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
-                        <Link href="https://www.instagram.com" target="_blank">
+                        <Link href=" https://www.instagram.com/sarah_gichuru/?next=%2F&hl=en" target="_blank">
                             <FaInstagram className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
                     <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
-                        <Link href="https://www.facebook.com" target="_blank">
+                        <Link href="https://www.facebook.com/profile.php?id=100006807795867" target="_blank">
                             <FaFacebook className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
