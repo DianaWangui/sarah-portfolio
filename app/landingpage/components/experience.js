@@ -47,7 +47,7 @@ const Experience = () => {
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
         whileHover={{ scale: 1.03 }}
       >
         <h4 className="text-sm font-light lg:border border-gray-[500]
@@ -75,7 +75,7 @@ const Experience = () => {
             variants={itemVariants}
           >
             {/* Circle Indicator - Changes to green on hover */}
-            <div className="absolute -left-2.5 w-5 h-5 rounded-full border-2 border-gray-600 bg-gray-800 shadow-lg z-10 transform transition-all duration-300
+            <div className="absolute -left-2.5 w-5 h-5 rounded-full border-2 border-gray-600 shadow-lg z-10 transform transition-all duration-300
                           group-hover:border-green-500 group-hover:bg-green-500 group-hover:scale-110"></div>
 
             {/* Content Card - Border changes to green on hover */}

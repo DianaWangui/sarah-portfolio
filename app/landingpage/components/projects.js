@@ -1,130 +1,140 @@
 'use client';
-
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import CloudPBXBlog from '../../blogs/components/CloudPBXBlog';
+import NetworkMonitoringBlog from '../../blogs/components/NetworkMonitoringBlog';
+import { BookOpen, ChevronRight } from 'lucide-react';
+import { Server, Cloud, Phone, Shield, Briefcase } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Server, Cloud, Phone, Shield, Briefcase } from 'lucide-react';
+import Link from 'next/link';
 
 const Projects = () => {
-  const projects = [
+  const blogs = [
     {
-      title: 'Cloud PBX & VMS',
-      description: 'Deployed and sold P-Series Cloud PBX instances across multiple regions. With 176 extensions sold and 15PBXs sold',
-      icon: Phone,
-      color: '#4CAF50'
+      id: 'cloud-pbx',
+      img: '/Images/cloud.png',
+      title: 'Cloud PBX BYOI Deployment Solution',
+      excerpt: 'Empower your business with a fully customizable, self-hosted P Series Cloud PBX solution. Built from scratch with virtualization, advanced clustering, and seamless networking, our P-Series Cloud PBX has already transformed communication for 180+ extensions since its launch in January 2024.',
+      date: 'February 28, 2025',
+      learn: 'To learn more on deployment',
+      tag: 'Infrastructure',
+      component: <CloudPBXBlog />
     },
     {
-      title: 'Data Center Deployments',
-      description: 'colocation solutions',
-      icon: Server,
-      color: '#1E90FF'
-    },
-    {
-      title: 'Secure VPN Solutions',
-      description: 'Telephony & CRM Integration: Integrated Yeastar Cloud PBX with CRM, Microsoft Teams, and call center solutions.',
-      icon: Cloud,
-      color: '#FFA500'
-    },
-    {
-      title: 'Cybersecurity & Network Security',
-      description: 'Hands-on experience with packet analysis (Wireshark, sngrep) and vulnerability management.',
-      icon: Shield,
-      color: '#8A2BE2'
+      id: 'network-monitoring',
+      img: '/Images/image.png',
+      title: 'Network Monitoring with Zabbix, Prometheus, and Grafana',
+      excerpt: 'Effective network monitoring is crucial for maintaining optimal performance and security. In this guide, I will walk you through my project of deploying and configuring Zabbix, Prometheus, and Grafana for real-time network monitoring. By the end of this guide, you will have a robust setup capable of monitoring network traffic, performance, and security events.',
+      date: 'February 20, 2025',
+      tag: 'Networking',
+      component: <NetworkMonitoringBlog />
     }
   ];
 
-  const ProjectCard = ({ project, index }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: false,
-      threshold: 0.2,
-      rootMargin: "-50px 0px" // Makes animation trigger slightly earlier
-    });
-    const Icon = project.icon;
+  const [selectedBlog, setSelectedBlog] = useState(null);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+    rootMargin: "-50px 0px"
+  });
 
-    useEffect(() => {
-      if (inView) {
-        controls.start({
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: { duration: 0.5, delay: index * 0.2 }
-        });
-      } else {
-        controls.start({
-          opacity: 0,
-          y: 20, // Reduced from 50 to make it less dramatic
-          scale: 0.95, // Less dramatic scale change (was 0.9)
-          transition: { duration: 0.3 } // Faster fade out
-        });
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95
+    },
+    visible: index => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        delay: index * 0.2,
+        ease: "easeOut"
       }
-    }, [controls, inView, index]);
-
-    return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 20, scale: 0.95 }} // Less dramatic initial state
-        animate={controls}
-        className="group relative w-full"
-      >
-        <div className="relative border border-gray-700 p-6 rounded-xl
-                       bg-gray-800/50 backdrop-blur-sm shadow-lg
-                       hover:border-gray-500 transition-all duration-500
-                       hover:bg-gray-800/80">
-          <div className="flex items-start gap-4">
-            <motion.div
-              className="p-3 rounded-xl shadow-lg"
-              style={{ backgroundColor: `${project.color}30` }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Icon className="h-6 w-6" style={{ color: project.color }} />
-            </motion.div>
-
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold"
-                style={{ color: project.color }}>
-                {project.title}
-              </h3>
-              <p className="text-sm text-gray-400 mt-2 leading-relaxed
-                           group-hover:text-gray-300 transition-colors duration-300">
-                {project.description}
-              </p>
-            </div>
-          </div>
-
-          <motion.div
-            className="absolute inset-0 border border-transparent rounded-xl"
-            initial={false}
-            animate={inView ? { borderColor: `${project.color}20` } : { borderColor: 'transparent' }}
-            transition={{ duration: 1, delay: index * 0.2 + 0.3 }}
-          />
-        </div>
-      </motion.div>
-    );
+    })
   };
-
-  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
         className="text-sm font-light lg:border border-gray-[500]
-                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
-                     flex justify-center items-center gap-2
+                    text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
+                    flex justify-center items-center gap-2
                     hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        ref={ref}
       >
         <Briefcase className="h-5 w-5" /> PROJECTS
       </motion.h4>
 
-      <div className="grid grid-cols-1 gap-6"> {/* Reduced gap from 8 to 6 */}
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
-        ))}
+      <div className="max-w-6xl mx-auto">
+        {selectedBlog ? (
+          <div>
+            <button
+              onClick={() => setSelectedBlog(null)}
+              className="mb-4 flex items-center text-green-500 hover:text-green-400 transition-colors duration-300"
+            >
+              <ChevronRight className="transform rotate-180 mr-1" size={16} />
+              Back to all posts
+            </button>
+            {blogs.find(blog => blog.id === selectedBlog)?.component}
+          </div>
+        ) : (
+          <>
+            <div ref={ref} className="grid md:grid-cols-2 gap-6">
+              {blogs.map((blog, index) => (
+                <motion.div
+                  key={blog.id}
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={controls}
+                  className="bg-transparent rounded-lg border border-gray-500 h-full flex flex-col hover:border-gray-300 transition-all duration-300 hover:shadow-lg hover:shadow-green-900/20"
+                >
+                  <div className="p-6 flex flex-col h-full">
+                    <div className="flex justify-between items-start mb-3">
+                      <span className="inline-block px-2 py-1 text-xs font-semibold bg-green-900 text-green-300 rounded-md">
+                        {blog.tag}
+                      </span>
+                      <span className="text-sm text-gray-500">{blog.date}</span>
+                    </div>
+
+                    <div className="w-full flex justify-center mb-4 flex-grow">
+                      <img
+                        src={blog.img}
+                        alt={blog.title}
+                        className="h-40 w-3/4 object-contain"
+                      />
+                    </div>
+
+                    <h3 className="text-lg font-bold mb-2 text-white">{blog.title}</h3>
+                    <p className="text-gray-400 mb-4 text-xs line-clamp-2">{blog.excerpt}</p>
+                    <Link href="/blogs/[id]" as={`/blogs/${blog.id}`}>
+                      <button
+                        className="flex items-center text-green-500 hover:text-green-400 transition-colors duration-300 mt-auto"
+                      >
+                        <BookOpen size={16} className="mr-1" />
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

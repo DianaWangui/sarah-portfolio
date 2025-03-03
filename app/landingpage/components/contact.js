@@ -33,15 +33,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
-    
-    // Add animation effect for submission feedback
+
     setIsSubmitting(true);
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      
-      // Reset form after successful submission
+
+      // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({
           name: "",
@@ -52,6 +51,23 @@ const Contact = () => {
         setIsSubmitted(false);
       }, 3000);
     }, 1500);
+
+    // Create email subject and body
+    const subject = `Website Contact Form: ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+    `;
+
+    // Open email client after form processing
+    setTimeout(() => {
+      const mailtoLink = `mailto:chiegody254@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }, 2000);
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,7 +90,7 @@ const Contact = () => {
 
   return (
     <div className="bg-transparent px-6 md:px-10 lg:px-[10%] mt-12 lg:mt-24 mb-16">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="max-w-4xl mx-auto"
@@ -90,14 +106,14 @@ const Contact = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Get In Touch</h2>
             <div className="h-1 w-20 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full"></div>
           </motion.div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className="text-gray-400 mt-6 max-w-2xl mx-auto leading-relaxed"
           >
-            For technical consultation & solution design in VoIP systems, IP Telephony, FTTH Solution, 
+            For technical consultation & solution design in VoIP systems, IP Telephony, FTTH Solution,
             Dahua Security Systems, Security and Network monitoring.
           </motion.p>
         </div>
@@ -110,12 +126,12 @@ const Contact = () => {
           className="bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-xl border border-gray-800 p-6 md:p-8 shadow-2xl"
         >
           {isSubmitted ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center justify-center py-12 text-center"
             >
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, rotate: 360 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -129,8 +145,8 @@ const Contact = () => {
               <p className="text-gray-400">Thank you for reaching out. We'll get back to you shortly.</p>
             </motion.div>
           ) : (
-            <motion.form 
-              onSubmit={handleSubmit} 
+            <motion.form
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <div className="flex flex-col md:flex-row gap-6">
@@ -207,7 +223,7 @@ const Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="pt-2"
                 variants={itemVariants}
               >
@@ -226,7 +242,7 @@ const Contact = () => {
                   <span className={`flex items-center gap-2 transition-all duration-300 ${isSubmitting ? 'opacity-0' : 'opacity-100'}`}>
                     Send Message <Send className="h-5 w-5" />
                   </span>
-                  
+
                   {isSubmitting && (
                     <span className="absolute inset-0 flex items-center justify-center">
                       <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -242,7 +258,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Optional Contact Info Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
