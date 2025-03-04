@@ -16,7 +16,7 @@ const About = () => {
         Cloud & Network Infrastructure Architect |<br />VoIP, Virtualization &<br /> Cybersecurity Specialist 
         </h1>
 
-        <p className="text-gray-300 mt-4 mb-4 text-lg lg:pr-[8%] leading-[12rem">
+        <p className="text-gray-400 mt-4 mb-4 text-lg lg:pr-[8%] leading-[12rem">
           I am a <span className="text-[#FFEFC8]">Cloud & Network Solutions Architect</span> specializing in <span className="text-[#FFEFC8]">VoIP, Cybersecurity, and IT Infrastructure</span>. With years of experience designing, deploying, and managing secure, scalable solutions, I help businesses optimize their technology for maximum efficiency.
           <br/><br/>
           <strong>What I Do Best:</strong>
