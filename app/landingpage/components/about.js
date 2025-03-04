@@ -12,7 +12,7 @@ const About = () => {
         <PersonOutlineIcon className="text-green-500" />
         ABOUT
       </h4>
-        <h1 className="text-4xl lg:text-6xl font-bold lg:font-light text-gray-100 mt-4 lg:tracking-wider leading-relaxed">
+        <h1 className="text-4xl lg:text-3xl font-bold lg:font-light text-gray-100 mt-4 lg:tracking-wider leading-relaxed">
         Cloud & Network Infrastructure Architect |<br />VoIP, Virtualization &<br /> Cybersecurity Specialist 
         </h1>
 
