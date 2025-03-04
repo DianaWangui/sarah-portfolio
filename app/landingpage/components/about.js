@@ -8,7 +8,7 @@ const About = () => {
       <h4 className="text-sm font-light lg:border border-gray-[500]
                      text-[#dddddd] py-2 px-4 lg:mb-12 w-[120px] text-center
                      flex justify-center items-center gap-2 decoration-inherit
-                    hover:border-gray-200 font-Poppins rounded-full">
+                     hover:border-gray-200 font-Poppins rounded-full">
         <PersonOutlineIcon className="text-green-500" />
         ABOUT
       </h4>
