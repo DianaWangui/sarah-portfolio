@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Achievements = () => {
   const achievements = [
-    { "4+": "years of experience" },
+    { "5+": "years of experience" },
     { "500+": "Training sessions completed" },
     { "20+": "Major Projects Participated" },
     { "2000+": "Customers Trained" }

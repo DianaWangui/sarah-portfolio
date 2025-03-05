@@ -43,8 +43,8 @@ const ToolsGrid = () => {
                         <Image
                             src={tool.image}
                             alt={tool.name}
-                            width={50}
-                            height={50}
+                            width={100}
+                            height={100}
                             className="object-contain"
                         />
 

@@ -88,7 +88,7 @@ const Experience = () => {
               </div>
 
               {/* Job Title */}
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors duration-300">{exp.title}</h3>
+              <h3 className="text-sm lg:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors duration-300">{exp.title}</h3>
 
               {/* Company */}
               <p className="text-gray-400 font-medium">{exp.company}</p>
