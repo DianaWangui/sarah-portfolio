@@ -69,8 +69,8 @@ const Projects = () => {
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
         className="text-sm font-light lg:border border-gray-[500]
-                    text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
-                    flex justify-center items-center gap-2
+                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[120px] text-center
+                     flex justify-center items-center gap-2 decoration-inherit
                     hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

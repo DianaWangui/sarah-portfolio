@@ -51,8 +51,8 @@ const Experience = () => {
         whileHover={{ scale: 1.03 }}
       >
         <h4 className="text-sm font-light lg:border border-gray-[500]
-                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
-                     flex justify-center items-center gap-2
+                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[120px] text-center
+                     flex justify-center items-center gap-2 decoration-inherit
                     hover:border-gray-200 font-Poppins rounded-full"><Briefcase className="h-5 w-5" /> Experience
         </h4>
       </motion.div>
