@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const SideCard = () => {
     return (
@@ -51,15 +51,29 @@ const SideCard = () => {
                             <FaFacebook className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
+                    {/* Email icon */}
+                    <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
+                        <Link href="mailto:sarahgichuru55@gmail.com">
+                            <FaEnvelope className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
+                        </Link>
+                    </li>
+                    {/* WhatsApp icon */}
+                    <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
+                        <Link href="https://wa.me/YOUR_PHONE_NUMBER_HERE" target="_blank">
+                            <FaWhatsapp className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
+                        </Link>
+                    </li>
                 </ul>
 
-
-
-                {/* Hire Me Button */}
-                <button className="border-2 font-bold border-white w-[50%] text-white py-4 rounded-full mt-8
-        hover:bg-white hover:text-gray-900 transition active:text-green-500">
+                 {/* Download CV Button */}
+                 <a 
+                    href="/cv/mycv.pdf"
+                    download="mycv.pdf"
+                    className="border-2 font-bold border-white w-[50%] text-white py-4 rounded-full mt-8
+                    hover:bg-white hover:text-gray-900 transition active:text-green-500 text-center"
+                >
                     Hire Me
-                </button>
+                </a>
             </div>
         </div>
     );
