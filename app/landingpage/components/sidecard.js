@@ -59,7 +59,7 @@ const SideCard = () => {
                     </li>
                     {/* WhatsApp icon */}
                     <li className="relative w-[40px] h-[40px] flex items-center justify-center rounded-full border border-transparent transition-all duration-300 hover:border-green-500">
-                        <Link href="https://wa.me/YOUR_PHONE_NUMBER_HERE" target="_blank">
+                        <Link href="https://wa.me/+254741173015" target="_blank">
                             <FaWhatsapp className="text-white hover:text-green-500 transition-colors duration-300" size={24} />
                         </Link>
                     </li>
