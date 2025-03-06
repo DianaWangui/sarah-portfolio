@@ -34,36 +34,43 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Create email subject and body
-    const subject = `Website Contact Form: ${formData.name}`;
-    const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Message:
-${formData.message}
+  
+    // Format the message for WhatsApp
+    const whatsappMessage = `
+  *Name:* ${formData.name}
+  *Email:* ${formData.email}
+  *Phone:* ${formData.phone}
+  
+  *Message:*
+  ${formData.message}
     `;
-
-    // Show success message but don't clear form immediately
+  
+    // Show success message
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-
-      // Just hide the success message after 3 seconds without clearing the form
+      resetForm();
+  
       setTimeout(() => {
         setIsSubmitted(false);
-        // Don't reset the form here
       }, 3000);
-
-      // Open email client after form processing
+  
       setTimeout(() => {
-        const mailtoLink = `mailto:chiegody254@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
+        const phoneNumber = "254741173015";
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappURL, '_blank');
       }, 2000);
     }, 1500);
   };
