@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, Terminal, BarChart2, Server, Workflow, Database, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const NetworkMonitoringBlog = () => {
     const steps = [
@@ -301,6 +302,10 @@ const NetworkMonitoringBlog = () => {
                             </div>
                         </div>
                     ))}
+                     <Image src="/Images/image.png" alt="Cloud PBX Architecture" layout="responsive"
+                        width={16}
+                        height={9}
+                    />
                 </div>
 
                 {/* Conclusion */}
