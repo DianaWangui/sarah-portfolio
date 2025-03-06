@@ -12,6 +12,7 @@ import Specializations from './components/specialization';
 import Projects from './components/projects'
 import Achievements from './components/achievements';
 import ToolsGrid from './components/tools2';
+import FixedNavigation from './components/fixednavigation';
 
 const AnimatedBackground = () => {
   return (
@@ -32,19 +33,38 @@ const AnimatedBackground = () => {
 const Home = () => {
   return (
     <div className="relative min-h-screen bg-black bg-[url(/Images/bg-camera.jpg)] bg-fixed ... bg-opacity-75 bg-blend-multiply bg-cover bg-center bg-no-repeat">
+      <FixedNavigation />
       <AnimatedBackground />
       <div className="relative w-full flex flex-col lg:flex-row">
         <SideCard />
         <div className="w-full lg:w-[76%] lg:ml-[24%]">
-          <About />
-          <Achievements />
-          <Specializations />
-          <Tools />
-          <ToolsGrid />
-          <Projects />
-          <Experience />
-          <Education />
-          <Contact />
+          <section id="about">
+            <About />
+          </section>
+          <section id="achievements">
+            <Achievements />
+          </section>
+          <section id="specializations">
+            <Specializations />
+          </section>
+          <section id="tools">
+            <Tools />
+          </section>
+          <section id="toolsgrid">
+            <ToolsGrid />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="experience">
+            <Experience />
+          </section>
+          <section id="education">
+            <Education />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
         </div>
       </div>
     </div>
