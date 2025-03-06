@@ -140,24 +140,24 @@ const CloudPBXBlog = () => {
 
                 <div className="bg-gray-900 p-6 rounded-lg mb-6 border border-gray-800">
                     <h2 className="font-bold text-xl mb-3 text-white">Domain Structure of Yeastar P-Series Cloud PBX</h2>
-                    
+
                     <p className="mb-4 text-gray-300">
                         Before you start to deploy domain for Yeastar P-Series Cloud PBX, you need to know the domain requirements and acquire the SSL certificates and keys of your domain.
                     </p>
-                    
+
                     <p className="text-green-400 mb-6 font-medium">
                         Recommended providers: GoDaddy and Namecheap
                     </p>
-                    
+
                     <div className="mb-6">
                         <h3 className="font-bold mb-3 text-white border-b border-gray-700 pb-2">Domain Structure and Requirements</h3>
                         <p className="mb-3 text-gray-300">
                             The <strong className="text-white">YCM Server</strong>, <strong className="text-white">SBC Proxy Server</strong> and <strong className="text-white">Cloud PBX instance</strong> require domain names. Refer to the following requirements to set up domain for your servers and PBX instances.
                         </p>
-                        
+
                         <h4 className="font-semibold mb-2 text-blue-300">Domain Level</h4>
                         <p className="mb-3 text-gray-300">The following are the domain level requirements of the servers and Cloud PBX instance:</p>
-                        
+
                         <div className="space-y-4 mb-6">
                             {/* YCM Server */}
                             <div className="bg-gray-800 p-3 rounded border-l-4 border-blue-500">
@@ -169,7 +169,7 @@ const CloudPBXBlog = () => {
                                     <em>Example:</em> If the YCM Server has 3LD, the domain name can be <code className="bg-gray-700 px-1 rounded text-blue-300">ycm.example.com</code>.
                                 </p>
                             </div>
-                            
+
                             {/* SBC Proxy Server */}
                             <div className="bg-gray-800 p-3 rounded border-l-4 border-blue-500">
                                 <h5 className="font-bold text-white mb-1">SBC Proxy Server</h5>
@@ -186,7 +186,7 @@ const CloudPBXBlog = () => {
                                     </p>
                                 </div>
                             </div>
-                            
+
                             {/* Cloud PBX instance */}
                             <div className="bg-gray-800 p-3 rounded border-l-4 border-blue-500">
                                 <h5 className="font-bold text-white mb-1">Cloud PBX instance</h5>
@@ -198,12 +198,12 @@ const CloudPBXBlog = () => {
                                 </p>
                             </div>
                         </div>
-                        
+
                         <h4 className="font-semibold mb-2 text-blue-300">Domain Forwarding</h4>
                         <p className="mb-3 text-gray-300">
                             You need to set up domain forwarding to make the domains of your YCM Server, SBC Proxy Server and Cloud PBX instances point to the IP address of the target servers.
                         </p>
-                        
+
                         <div className="space-y-4">
                             {/* YCM Server Forwarding */}
                             <div className="bg-gray-800 p-3 rounded border-l-4 border-green-500">
@@ -215,7 +215,7 @@ const CloudPBXBlog = () => {
                                     <em>Example:</em> The public IP address of YCM Server is <code className="bg-gray-700 px-1 rounded text-green-300">123.123.123.123</code>, and the domain name is <code className="bg-gray-700 px-1 rounded text-green-300">ycm.yeastar.com</code>, you should forward <code className="bg-gray-700 px-1 rounded text-green-300">ycm.yeastar.com</code> to <code className="bg-gray-700 px-1 rounded text-green-300">123.123.123.123</code>.
                                 </p>
                             </div>
-                            
+
                             {/* SBC Proxy Server Forwarding */}
                             <div className="bg-gray-800 p-3 rounded border-l-4 border-green-500">
                                 <h5 className="font-bold text-white mb-1">SBC Proxy Server</h5>
@@ -229,7 +229,7 @@ const CloudPBXBlog = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Summary Section */}
                     <div className="mt-6 bg-gray-800/50 p-4 rounded-lg border border-gray-700">
                         <h4 className="font-semibold mb-2 text-white">Quick Summary</h4>
@@ -243,7 +243,7 @@ const CloudPBXBlog = () => {
                         </p>
                     </div>
                 </div>
-                                
+
                 {/* System Requirements Section */}
                 <div className="mb-8">
                     <h2 className="text-xl font-bold mb-4 text-white">System Requirements</h2>
@@ -259,7 +259,7 @@ const CloudPBXBlog = () => {
                     <h2 className="text-xl font-bold mb-4 text-white">Deployment Procedure</h2>
                     <div className="bg-gray-900 p-4 rounded-lg border border-gray-800">
                         <p className="mb-4 text-gray-300"><strong className="text-white">Procedure</strong></p>
-                        
+
                         <div className="mb-4">
                             <p className="text-gray-300 mb-2">1. Set up your servers.</p>
                             <p className="text-gray-400 mb-2">You need to set up the following servers:</p>
@@ -270,7 +270,7 @@ const CloudPBXBlog = () => {
                                 <li>PBXHub Server(s)</li>
                             </ul>
                         </div>
-                        
+
                         <div className="mb-4">
                             <p className="text-gray-300 mb-2"><strong className="text-white">Important:</strong> The server network settings should meet with the following requirements:</p>
                             <ol className="list-decimal pl-6 text-gray-400 mb-4">
@@ -281,12 +281,12 @@ const CloudPBXBlog = () => {
                                 <li>For the Private IP address, the 172.17.x.x and 172.19.x.x IP address ranges MUST be avoided.</li>
                             </ol>
                         </div>
-                        
+
                         <div className="mb-4">
                             <p className="text-gray-300 mb-2">2. Set up data disk for the servers.</p>
                             <p className="text-gray-400 mb-2"><strong className="text-white">Note:</strong> You need to set up two additional data disks on each PBXHub Server for the storage of CloudPBX system data and recording files respectively.</p>
                         </div>
-                        
+
                         <div className="mb-4">
                             <p className="text-gray-300 mb-2">3. Configure the following settings on the router that acts as the gateway for the network where the SBC Server and SBC Proxy Server reside.</p>
                             <ol className="list-decimal pl-6 text-gray-400">

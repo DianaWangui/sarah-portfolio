@@ -51,11 +51,11 @@ const SpecializationCard = ({ spec, index }) => {
           </motion.div>
 
           <div className="flex-1">
-            <h3 className="text-lg font-semibold"
+            <h3 className="text-sm lg:text-lg font-semibold"
                 style={{ color: spec.color }}>
               {spec.title}
             </h3>
-            <p className="text-sm text-gray-400 mt-2 leading-relaxed
+            <p className="text-xs lg:text-sm text-gray-400 mt-2 leading-relaxed
                          group-hover:text-gray-300 transition-colors duration-300">
               {spec.description}
             </p>
@@ -89,7 +89,7 @@ const Specializations = () => {
         ref={ref}
         whileHover={{ scale: 1.03 }}
       >
-        <Award className="h-5 w-5" /> SPECIALIZATIONS
+        <Award className="h-5 w-5 mb-4 lg:mb-0" /> SPECIALIZATIONS
       </motion.h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

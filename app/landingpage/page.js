@@ -11,15 +11,15 @@ import SideCard from './components/sidecard';
 import Specializations from './components/specialization';
 import Projects from './components/projects'
 import Achievements from './components/achievements';
-import InfiniteScrollAnimation from './components/tools2';
+import ToolsGrid from './components/tools2';
 
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10">
       {/* Background image from public folder */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ backgroundImage: "url('/Images/bg.jpg)" }} 
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/Images/bg.jpg)" }}
       />
 
       {/* Optional overlay for better contrast */}
@@ -40,7 +40,7 @@ const Home = () => {
           <Achievements />
           <Specializations />
           <Tools />
-          <InfiniteScrollAnimation />
+          <ToolsGrid />
           <Projects />
           <Experience />
           <Education />

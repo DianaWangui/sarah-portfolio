@@ -101,7 +101,7 @@ const Education = () => {
               </div>
 
               {/* Degree Title */}
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors duration-300">{edu.title}</h3>
+              <h3 className="text-sm lg:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors duration-300">{edu.title}</h3>
 
               {/* Institution */}
               <div className="flex items-center mb-3">
