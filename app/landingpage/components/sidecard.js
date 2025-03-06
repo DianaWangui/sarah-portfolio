@@ -67,10 +67,10 @@ const SideCard = () => {
 
                  {/* Download CV Button */}
                  <a 
-                    href="/cv/mycv.pdf"
-                    download="mycv.pdf"
+                    href="/cv/sarah_g.pdf"
+                    download="sarah_g.pdf"
                     className="border-2 font-bold border-white w-[50%] text-white py-4 rounded-full mt-8
-                    hover:bg-white hover:text-gray-900 transition active:text-green-500 text-center"
+                    hover:bg-white hover:text-green-500 transition active:text-green-900 text-center"
                 >
                     Hire Me
                 </a>

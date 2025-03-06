@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 const Achievements = () => {
   const achievements = [
-    { "5+": "years of experience" },
-    { "500+": "Training sessions completed" },
-    { "20+": "Major Projects Participated" },
+    { "4+": "years of experience" },
+    { "400+": "Training sessions" },
+    { "35+": "Major Projects" },
     { "2000+": "Customers Trained" }
   ];
 
   return (
-    <div className="bg-transparent px-4 py-6 mt-4 md:mt-6 lg:mt-20 lg:px-8 lg:py-10">
+    <div className="bg-transparent lg:pl-[10%] lg:pr-[14%] p-8">
       <div className="w-full flex flex-wrap justify-center max-w-6xl mx-auto">
         {achievements.map((achievement, index) => {
           const key = Object.keys(achievement)[0];
