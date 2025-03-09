@@ -5,12 +5,12 @@ const Experience = () => {
   // Experience dummy data
   const experienceData = [
     {
-      date: "July 2021 - Present",
-      title: "Technical Operations Engineer",
+      date: "Jan 2024 - Present",
+      title: "Technical Operation Engineer",
       company: "Swift Technologies",
     },
     {
-      date: "August 2023 - Contract",
+      date: " July 2021 - Dec 2023",
       title: "Technical Support Engineer",
       company: "Swift Technologies",
     },
