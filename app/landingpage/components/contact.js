@@ -52,7 +52,7 @@ const Contact = () => {
     try {
       // Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree form ID
       // For example: https://formspree.io/f/xrgdkpay
-      const response = await fetch('https://formspree.io/f/moveaorp', {
+      const response = await fetch('https://formspree.io/f/xrbpzngv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
