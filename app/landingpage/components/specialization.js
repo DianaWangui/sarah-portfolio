@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { Monitor, Radio, Terminal, Cloud, Share2, Server, Shield, Award } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ToolsIcon from "@mui/icons-material/HandymanOutlined";
 
 const specializations = [
   { title: "Network Monitoring & Observability", description: "Zabbix, Grafana, Prometheus, MikroTik Torch", icon: Monitor, color: "#4CAF50" },
@@ -80,8 +81,8 @@ const Specializations = () => {
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
         className="text-sm font-light lg:border border-gray-[500]
-                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[22%] text-center
-                     flex justify-center items-center gap-2
+                    text-[#dddddd] py-2 px-4 mb-12 w-[100%] lg:w-[40%] lg:text-center
+                     flex lg:justify-center lg:items-center gap-2
                     hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -89,7 +90,7 @@ const Specializations = () => {
         ref={ref}
         whileHover={{ scale: 1.03 }}
       >
-        <Award className="h-5 w-5 mb-4 lg:mb-0" /> SPECIALIZATIONS
+        <ToolsIcon className="h-5 w-5" /> SPECIALIZATION
       </motion.h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

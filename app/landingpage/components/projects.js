@@ -7,6 +7,8 @@ import { Server, Cloud, Phone, Shield, Briefcase } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
+import ToolsIcon from "@mui/icons-material/HandymanOutlined";
+
 
 const Projects = () => {
   const blogs = [
@@ -69,15 +71,15 @@ const Projects = () => {
     <div className="p-8 bg-transparent pl-[10%] pr-[14%] mt-8 lg:mt-20">
       <motion.h4
         className="text-sm font-light lg:border border-gray-[500]
-                     text-[#dddddd] py-2 px-4 lg:mb-12 w-[120px] text-center
-                     flex justify-center items-center gap-2 decoration-inherit
+                    text-[#dddddd] py-2 px-4 mb-12 w-[100%] lg:w-[40%] lg:text-center
+                     flex lg:justify-center lg:items-center gap-2
                     hover:border-gray-200 font-Poppins rounded-full"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Briefcase className="h-5 w-5" /> PROJECTS
-      </motion.h4>
+        <ToolsIcon className="h-5 w-5" /> PROJECTS
+        </motion.h4>
 
       <div className="max-w-6xl mx-auto">
         {selectedBlog ? (
