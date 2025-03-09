@@ -33,6 +33,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const resetForm = () => {
     setFormData({
@@ -43,36 +44,40 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
   
-    // Format the message for WhatsApp
-    const whatsappMessage = `
-  *Name:* ${formData.name}
-  *Email:* ${formData.email}
-  *Phone:* ${formData.phone}
-  
-  *Message:*
-  ${formData.message}
-    `;
-  
-    // Show success message
-    setTimeout(() => {
+    try {
+      // Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree form ID
+      // For example: https://formspree.io/f/xrgdkpay
+      const response = await fetch('https://formspree.io/f/moveaorp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        // Show success message
+        setIsSubmitted(true);
+        resetForm();
+        
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      setError('There was a problem submitting your form. Please try again.');
+      console.error('Form submission error:', err);
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      resetForm();
-  
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-  
-      setTimeout(() => {
-        const phoneNumber = "254741173015";
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        window.open(whatsappURL, '_blank');
-      }, 2000);
-    }, 1500);
+    }
   };
 
   const containerVariants = {
@@ -149,6 +154,28 @@ const Contact = () => {
               </motion.div>
               <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
               <p className="text-gray-400">Thank you for reaching out. We'll get back to you shortly.</p>
+            </motion.div>
+          )}
+
+          {/* Error Message */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="flex flex-col items-center justify-center py-6 text-center mb-6"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4"
+              >
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </motion.div>
+              <h3 className="text-2xl font-bold text-white mb-2">Oops!</h3>
+              <p className="text-gray-400">{error}</p>
             </motion.div>
           )}
 
